@@ -8,7 +8,7 @@ def main():
     """Run administrative tasks."""
     # os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'typeidea.settings')
 
-    # 区分环境，即开发环境使用develop.py的配置，线上环境使用product.py的配置
+    # 设定django的setting模块。区分环境，即开发环境使用develop.py的配置，线上环境使用product.py的配置
     profile = os.environ.get('TYPEIDEA_PROFILE', 'develop')
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "typeidea.settings.%s" % profile)
     try:

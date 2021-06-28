@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'typeidea',
     'blog',     # 注意顺序，因为django会按照顺序来查找对应资源
     'config',
     'comment',

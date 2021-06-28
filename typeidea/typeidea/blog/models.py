@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 # Category分类、Tag标签、Post文章都是跟内容直接相关的，因此我们把他们放到一个App中
 
 class Category(models.Model):
+    '''分类'''
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -28,6 +29,7 @@ class Category(models.Model):
         return self.name
 
 class Tag(models.Model):
+    '''标签'''
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -48,6 +50,7 @@ class Tag(models.Model):
         return self.name
 
 class Post(models.Model):
+    '''文章'''
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_DRAFT = 2

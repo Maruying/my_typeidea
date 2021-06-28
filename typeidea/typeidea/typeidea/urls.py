@@ -15,7 +15,25 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from .custom_site import custom_site
+from django.conf.urls import url
+
+from blog.views import post_list, post_detail
+from config.views import links
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', post_list),
+    # url(r'^category/(?P<category_id>\d+)/$', post_list),
+    # url(r'^tag/(?P<tag_id>\d+)/$', post_list),
+    # url(r'^post/(?P<post_id>\d+).html$', post_detail),
+    # url(r'^links/$', links),
+
+    path('category/<int:category_id>/', post_list),
+    path('tag/<int:tag_id>/', post_list),
+    path('post/<post_id>/', post_detail),
+    path('links/', links),
+
+    path('super_admin/', admin.site.urls),  # 超级用户的后台admin。密码admin123456
+    path('admin/', custom_site.urls),       # 普通用户的后台admin。密码admin123456
+
 ]

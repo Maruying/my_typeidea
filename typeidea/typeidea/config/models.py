@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 class Link(models.Model):
+    '''友联'''
     STATUS_NORMAL = 1
     STATUS_DELETE = 0
     STATUS_ITEMS = (
@@ -27,6 +28,7 @@ class Link(models.Model):
         verbose_name = verbose_name_plural = "友联"
 
 class SideBar(models.Model):
+    '''侧边栏'''
     STATUS_SHOW = 1
     STATUS_HIDE = 0
     STATUS_ITEMS = (
